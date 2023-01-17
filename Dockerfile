@@ -1,4 +1,4 @@
-FROM docker.io/library/python:3.8-slim
+FROM docker.io/library/python:3.8-slim-buster
 
 # Install dependencies
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
