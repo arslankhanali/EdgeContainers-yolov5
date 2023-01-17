@@ -4,21 +4,15 @@ FROM docker.io/library/python:3.8-slim
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 WORKDIR /app
-#RUN adduser node
-#RUN adduser node root
 
 COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN chmod -R 777 /app
-#RUN chown -R node:root /app
+RUN chgrp -R 0 /app && chmod -R g=u /app
 
 # Expose the port
 EXPOSE 5000
 EXPOSE 6000
-
-
-USER root
 
 CMD ./run.sh
