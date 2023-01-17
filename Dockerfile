@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM docker.io/library/python:3.8-slim
 
 # Install dependencies
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
@@ -29,4 +29,4 @@ EXPOSE 5000
 
 USER node
 
-CMD ["python3", "backend.py", "--port=5000"]
+CMD ["python3", "backend.py"]
