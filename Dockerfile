@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN chgrp -R 0 /app && chmod -R g=u /app
 
 RUN mkdir -p /.cache/hub/ultralytics_yolov5_master
-RUN cp ultralytics_yolov5_master /.cache/hub/ultralytics_yolov5_master
+RUN cp -r ultralytics_yolov5_master /.cache/hub/ultralytics_yolov5_master
 
 # Expose the port
 EXPOSE 5000
