@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-CMD ["python", "1_backend.py", "--port=5000"]
+CMD ["python3", "1_backend.py", "--port=5000"]
