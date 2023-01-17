@@ -11,23 +11,25 @@ WORKDIR /app
 RUN adduser node
 RUN adduser node root
 
-USER node
-
 # Copy the requirements.txt file
 COPY . .
-
-# Install the requirements
-RUN pip install --no-cache-dir -r requirements.txt
 
 # Fixing permission denied error that occurs in openshift because no container runs as root
 RUN chmod -R 777 /app
 RUN chown -R node:root /app
 
+RUN chmod -R 777 run.sh
 # RUN chmod -R 777 /usr/local/lib/python3.8
 # RUN chown -R node:root /usr/local/lib/python3.8
 
 # Expose the port
 EXPOSE 5000
 EXPOSE 6000
+
+
+USER node
+
+# Install the requirements
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD ./run.sh
