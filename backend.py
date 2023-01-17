@@ -31,5 +31,5 @@ if __name__ == "__main__":
     parser.add_argument('--model', default='yolov5s', help='model to run, i.e. --model yolov5s')
     args = parser.parse_args()
 
-    model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
-    app.run(host="0.0.0.0", port=5000)  # debug=True causes Restarting with stat
+    model = torch.hub.load('ultralytics/yolov5', args.model)
+    app.run(host="0.0.0.0", port=args.port)  # debug=True causes Restarting with stat
