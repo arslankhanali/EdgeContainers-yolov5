@@ -10,7 +10,7 @@ WORKDIR /app
 #RUN chmod -R 777 /app
 #RUN chown -R node:root /app
 
-ADD . /app
+ADD . .
 RUN pip install -r requirements.txt
 
 EXPOSE 5000
