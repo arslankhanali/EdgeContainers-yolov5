@@ -17,6 +17,7 @@ RUN mkdir -p /.cache/hub/ultralytics_yolov5_master
 RUN cp -r ultralytics_yolov5_master /.cache/hub/ultralytics_yolov5_master
 
 RUN chgrp -R 0 /.cache && chmod -R g=u /.cache
+RUN chgrp -R 0 /.local && chmod -R g=u /.local
 
 # Expose the port
 EXPOSE 5000
