@@ -1,7 +1,7 @@
 FROM python:3.8-slim
 
 # Install dependencies
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y -
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 # Copy the requirements.txt file
 COPY requirements.txt .
