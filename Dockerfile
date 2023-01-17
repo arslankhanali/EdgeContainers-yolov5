@@ -24,6 +24,9 @@ COPY . .
 RUN chmod -R 777 /app
 RUN chown -R node:root /app
 
+RUN chmod -R 777 /usr/local/lib/python3.9
+RUN chown -R node:root /usr/local/lib/python3.9
+
 # Expose the port
 EXPOSE 5000
 
