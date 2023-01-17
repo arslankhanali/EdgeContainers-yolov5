@@ -19,6 +19,6 @@ EXPOSE 5000
 EXPOSE 6000
 
 
-# Install the requirements
+USER root
 
 CMD ./run.sh
