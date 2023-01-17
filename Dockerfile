@@ -9,7 +9,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN python3 pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 RUN chmod -R 777 /app
 #RUN chown -R node:root /app
