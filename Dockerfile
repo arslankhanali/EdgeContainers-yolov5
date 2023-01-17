@@ -17,4 +17,4 @@ EXPOSE 5000
 
 #USER node
 
-CMD ["python3", "1_backend.py", "--port=5000"]
+CMD ["python3", "backend.py", "--port=5000"]
