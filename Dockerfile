@@ -19,8 +19,6 @@ EXPOSE 5000
 EXPOSE 6000
 
 
-USER node
-
 # Install the requirements
 
 CMD ./run.sh
