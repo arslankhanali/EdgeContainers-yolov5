@@ -22,7 +22,6 @@ RUN chgrp -R 0 /.cache && chmod -R g=u /.cache
 RUN chgrp -R 0 /.local && chmod -R g=u /.local
 
 # Expose the port
-EXPOSE 5000
-EXPOSE 6000
+EXPOSE 5000 6000
 
 CMD ./run.sh
