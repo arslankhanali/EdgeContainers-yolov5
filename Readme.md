@@ -8,12 +8,34 @@ Simple app consisting of a form where you can upload an image, and see the infer
 Port will be 6000
 
 ## App: API call
-curl -X POST -F image=@tests/zidane.jpg 'http://localhost:5000/v1/object-detection/yolov5'
 
-Then use [curl](https://curl.se/) to perform a request:
+Expose port 5000 and append '/v1/object-detection/yolov5"' at the end of the url.   
+You will have to manually create the service and expose the route.
 
-`$ curl -X POST -F image=@tests/zidane.jpg 'http://localhost:5000/v1/object-detection/yolov5'`
+Example of an API call via python
+```bash
+curl --location --request POST 'http://edge-containers-yolov-5-1-2-user2.apps.anomaly-cluster.rqdu.p1.openshiftapps.com/v1/object-detection/yolov5' \
+--form 'image=@"/Users/arslankhan/Downloads/a1.jpg"'
+```
 
+```py
+import requests
+
+url = "http://edge-containers-yolov-5-1-2-user2.apps.anomaly-cluster.rqdu.p1.openshiftapps.com/v1/object-detection/yolov5"
+
+payload={}
+files=[
+  ('image',('a1.jpg',open('/Users/arslankhan/Downloads/a1.jpg','rb'),'image/jpeg'))
+]
+headers = {
+  'Cookie': 'b7c8a8d85d6695d874ebd2786816dd45=9f9930134df7c33d4dd53777d9c67443'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+print(response.text)
+
+```
 The model inference results are returned:
 
 ```
